@@ -31,7 +31,7 @@ $totalPengeluaran = getTotalPengeluaran();
                         <th scope="col">ID</th>
                         <th scope="col">Kategori</th>
                         <th scope="col">Deskripsi</th>
-                        <th scope="col">Jumlah</th>
+                        <th scope="col">Harga</th>
                         <th scope="col">Tanggal Pengeluaran</th>
                     </tr>
                 </thead>

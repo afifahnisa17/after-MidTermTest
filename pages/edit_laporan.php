@@ -14,7 +14,7 @@
 
 <body>
     <div class="container my-5">
-        <h1 class="text-center mb-4">Edit Laporan Keuangan Anda</h1>
+        <h1 class="text-center mb-4">Edit Data Pengeluaran Anda</h1>
         
         <form action="" method="POST">
             <div class="mb-3">
@@ -42,7 +42,7 @@
             </div>
 
             <div class="text-center">
-                <button type="submit" class="btn btn-primary">Edit Laporan Keuangan</button>
+                <button type="submit" class="btn btn-primary">Edit Data Pengeluaran</button>
             </div>
         </form>
     </div>

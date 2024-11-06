@@ -1,34 +1,31 @@
 <?php
-include '../config/connectdb.php'; // Pastikan file ini berisi koneksi PDO
+include '../config/connectdb.php';
 
-if (isset($_POST['id'])) {
-    // Memeriksa apakah parameter 'id' dikirimkan melalui POST dari halaman lihat_detail.php
-    $id = htmlspecialchars($_POST['id']);
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
+    $id = htmlspecialchars($_POST['id']); // Mengambil ID dari form POST
 
-    // Persiapan query SQL untuk menghapus data berdasarkan 'id'
-    $sql = "DELETE FROM pengeluaran WHERE id = :id";
+    if ($conn) {
+        // Query untuk menghapus data pengeluaran berdasarkan ID
+        $sql = "DELETE FROM pengeluaran WHERE id = :id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
-    // Menyiapkan statement PDO
-    $stmt = $conn->prepare($sql);
-
-    // Mengikat parameter :id ke nilai yang diterima dari form
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-
-    // Eksekusi query dan menangani error
-    try {
-        // Menjalankan query untuk menghapus data
-        $stmt->execute();
-
-        // Jika penghapusan berhasil, redirect ke halaman index.php
-        header("Location: ../index.php");
-        exit();
-    } catch (PDOException $e) {
-        // Menangani error jika query gagal
-        echo "<script>alert('Terjadi kesalahan: " . $e->getMessage() . "');</script>";
+        try {
+            // Menjalankan query untuk menghapus data
+            $stmt->execute();
+            // Jika penghapusan berhasil, redirect dengan pesan alert
+            echo "<script>
+                    alert('Data pengeluaran berhasil dihapus!');
+                    window.location.href = '../index.php';
+                </script>";
+        } catch (PDOException $e) {
+            // Menangani error jika query gagal
+            echo "<script>alert('Terjadi kesalahan: " . $e->getMessage() . "');</script>";
+        }
     }
 } else {
-    // Jika 'id' tidak dikirim, arahkan ke halaman not_found_route.php
-    header("Location: ../pages/not_found.php");
+    // Jika tidak ada ID yang dikirimkan, arahkan ke halaman utama
+    header("Location: ../index.php");
     exit();
 }
 ?>

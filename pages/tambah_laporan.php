@@ -15,7 +15,7 @@
 
 <body>
     <div class="container my-5">
-        <h1 class="text-center mb-4">Ayo buat catatan keuangan Anda!</h1>
+        <h1 class="text-center mb-4">Ayo buat catatan pengeluaran Anda!</h1>
         
         <form action="../functions/createProses.php" method="POST">
             <div class="mb-3">
@@ -24,8 +24,8 @@
             </div>
             
             <div class="mb-3">
-                <label for="jumlah" class="form-label">Jumlah</label>
-                <input type="number" class="form-control" step="0.001" id="jumlah" name="jumlah" placeholder="Masukkan jumlah" required>
+                <label for="harga" class="form-label">Harga</label>
+                <input type="number" class="form-control" step="0.001" id="harga" name="harga" placeholder="Masukkan harga" required>
             </div>
             
             <div class="mb-3">

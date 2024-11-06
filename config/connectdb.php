@@ -1,5 +1,5 @@
 <?php
-// Koneksi ke database menggunakan PDO
+// koneksi ke database menggunakan pdo
 $serverName = "AFIFAH\MSSQLSERVER2";  
 $database = "pengeluaran_db";  
 $dsn = "sqlsrv:Server=$serverName;Database=$database";
@@ -8,7 +8,7 @@ $dsn = "sqlsrv:Server=$serverName;Database=$database";
 $isDbConnectionSuccess = false;
 
 try {
-    // Membuat
+    
     $conn = new PDO($dsn, "", "");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -18,4 +18,6 @@ try {
     // Menampilkan pesan error jika tidak terkoneksi
     echo "Connection failed: " . $e->getMessage();
 }
+
+
 ?>

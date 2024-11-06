@@ -110,4 +110,6 @@ SELECT COLUMN_NAME, DATA_TYPE
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'pengeluaran';
 
-select * from dbo.pengeluaran;
+select * from pengeluaran;
+
+EXEC sp_rename 'pengeluaran.jumlah', 'harga', 'COLUMN';

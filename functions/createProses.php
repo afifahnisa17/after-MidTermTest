@@ -19,10 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Harga harus berupa angka!";
         exit();
     }
-
+    
     // query untuk menambah data
     $sql = "INSERT INTO pengeluaran (deskripsi, harga, kategori, tanggal) VALUES (:deskripsi, :harga, :kategori, :tanggal)";
-
     
     $stmt = $conn->prepare($sql);
 
@@ -31,7 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':harga', $harga);
     $stmt->bindParam(':kategori', $kategori);
     $stmt->bindParam(':tanggal', $tanggal);
-
     
     try {
         // menjalankan query

@@ -1,11 +1,11 @@
 <?php
-include '../functions/readProses.php';
+    include '../functions/readProses.php';
 
-// membuat variabel & memanggil fungsi dari readProses.php
-$pengeluaranList = getAllPengeluaran();
+    // membuat variabel & memanggil fungsi dari readProses.php
+    $pengeluaranList = getAllPengeluaran();
 
-// membuat variabel & memanggil fungsi dari readProses.php
-$totalPengeluaran = getTotalPengeluaran();
+    // membuat variabel & memanggil fungsi dari readProses.php
+    $totalPengeluaran = getTotalPengeluaran();
 ?>
 
 <!DOCTYPE html>

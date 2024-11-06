@@ -1,5 +1,5 @@
 <?php
-include './config/connectdb.php';
+include './config/connectdb.php'; //agar terhubung ke database
 
 if ($conn) {
     $sql = "SELECT * FROM pengeluaran";
@@ -42,7 +42,7 @@ if ($conn) {
                         <p><strong>Jumlah: </strong>Rp <?php echo number_format($row['harga'], 2, ',', '.'); ?></p>
                         <p><strong>Tanggal Pengeluaran: </strong><?php echo htmlspecialchars($row['tanggal']); ?></p>
 
-                        <!-- Tombol-tombol berada dalam satu baris -->
+                        <!-- Tombol-tombol  -->
                         <div class="d-flex justify-content-start gap-2">
                             <a href="pages/lihat_detail.php?id=<?php echo $row['id']; ?>" class="btn btn-info">Lihat Detail</a>
                             <a href="pages/edit_laporan.php?id=<?php echo $row['id']; ?>" class="btn btn-warning">Edit</a>

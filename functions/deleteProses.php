@@ -2,29 +2,29 @@
 include '../config/connectdb.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
-    $id = htmlspecialchars($_POST['id']); // Mengambil ID dari form POST
+    $id = htmlspecialchars($_POST['id']); //mengabil id dari form post
 
     if ($conn) {
-        // Query untuk menghapus data pengeluaran berdasarkan ID
+        // menghapus data berdasarkan id
         $sql = "DELETE FROM pengeluaran WHERE id = :id";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
         try {
-            // Menjalankan query untuk menghapus data
+            
             $stmt->execute();
-            // Jika penghapusan berhasil, redirect dengan pesan alert
+            // alert jika data berhasil dihapus
             echo "<script>
                     alert('Data pengeluaran berhasil dihapus!');
                     window.location.href = '../index.php';
                 </script>";
         } catch (PDOException $e) {
-            // Menangani error jika query gagal
+            // jika query gagal, muncul pesan error
             echo "<script>alert('Terjadi kesalahan: " . $e->getMessage() . "');</script>";
         }
     }
 } else {
-    // Jika tidak ada ID yang dikirimkan, arahkan ke halaman utama
+    // kembali ke halaman utama
     header("Location: ../index.php");
     exit();
 }

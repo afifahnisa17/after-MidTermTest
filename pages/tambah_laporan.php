@@ -39,7 +39,7 @@
             </div>
 
             <div class="text-center">
-                <button type="submit" class="btn btn-primary">Tambah Laporan Keuangan</button>
+                <button type="submit" class="btn btn-primary">Tambah Laporan Pengeluaran</button>
             </div>
         </form>
     </div>

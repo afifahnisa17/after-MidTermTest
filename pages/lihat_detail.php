@@ -1,13 +1,10 @@
 <?php
-// lihat_detail.php
-
-// Pastikan file readProses.php sudah dimasukkan untuk mengambil data pengeluaran
 include '../functions/readProses.php';
 
-// Memanggil fungsi dari readProses.php untuk mendapatkan semua data pengeluaran
+// membuat variabel & memanggil fungsi dari readProses.php
 $pengeluaranList = getAllPengeluaran();
 
-// Memanggil fungsi untuk mendapatkan total pengeluaran
+// membuat variabel & memanggil fungsi dari readProses.php
 $totalPengeluaran = getTotalPengeluaran();
 ?>
 
@@ -26,7 +23,7 @@ $totalPengeluaran = getTotalPengeluaran();
         <h1 class="text-center">Detail Pengeluaran</h1>
         <p class="text-center mb-4">Berikut adalah rincian semua pengeluaran Anda dalam tabel.</p>
 
-        <!-- Pastikan ada data pengeluaran -->
+        <!-- memastikan ada data  -->
         <?php if ($pengeluaranList): ?>
             <table class="table table-bordered table-striped">
                 <thead>
@@ -61,7 +58,7 @@ $totalPengeluaran = getTotalPengeluaran();
 
         <!-- Link kembali ke halaman utama -->
         <div class="text-center">
-            <a href="../index.php" class="btn btn-primary">Kembali ke Laporan Pengeluaran</a>
+            <a href="../index.php" class="btn btn-primary">Kembali ke Beranda</a>
         </div>
     </div>
 
